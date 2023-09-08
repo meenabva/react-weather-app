@@ -1,22 +1,25 @@
-import React, { useEffect } from 'react';
-//import './styles.css';
-import { Card } from 'semantic-ui-react'
+import React from 'react';
+import "./styles.css";
+import { Card } from 'react-bootstrap'
 
 const Weather = ({weatherData}) => {
   
-  useEffect(() => {
+/*   useEffect(() => {
     console.log("props", weatherData)
   }, [])
-
+ */
   return(
-    <Card>
-      <Card.Content>
-          <Card.Header className="header">{weatherData.name}</Card.Header>
-          <Card.Content>
-          <p>{weatherData.main.temp}</p>
-          <p>{weatherData.weather[0].description}</p>
-          </Card.Content>
-      </Card.Content>
+    <Card data-bs-theme="dark">
+      <Card.Body>
+          <Card.Title>
+            <h2 className='mb-3'>{weatherData.name}</h2>
+          </Card.Title>
+          <Card.Text className='m-0 p-0'>
+            <h3 className='mt-3'>{weatherData.main.temp}</h3>
+            <img src={`${process.env.REACT_APP_ICON_URL}/${weatherData.weather[0].icon}@2x.png`} />
+            <h5>{weatherData.weather[0].description}</h5>
+          </Card.Text>
+      </Card.Body>
     </Card>
   );
 }

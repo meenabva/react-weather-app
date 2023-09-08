@@ -40,14 +40,12 @@ export default function App() {
   }, [lat, long])
 
   return (
-    <div className="App">
-      <div className='App-header'>
+    <div className="App App-header">
         {(typeof data.main != 'undefined') ? (
-          <Weather weatherData={data}/>
+          <Weather weatherData={data} />
         ): (
-          <div>undefined</div>
+          <div></div>
         )}
-      </div>
     </div>
   );
 }
