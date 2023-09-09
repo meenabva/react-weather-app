@@ -1,13 +1,40 @@
 .card{
-    background-color: burlywood;
+    background-color: rgb(89, 99, 124);
     margin: 20px;
-    padding: 30px;
-    width: 20%;
+    padding: 20px;
+    width: fit-content;
     border-radius: 10px;
+    color: aliceblue;
+    font-weight: lighter;
 }
 
 .card img{
     padding: 0px;
     margin: 0px;
     height: 150px;
+}
+
+.weather-container{
+    background-color: rgb(183, 226, 255);
+    height: 100%;
+    width: 90%;
+    margin: auto;
+    border-radius: 20px;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+}
+
+.temp-col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+}
+
+.chart{
+    background-color: azure;
+    border-radius: 20px;
 }
