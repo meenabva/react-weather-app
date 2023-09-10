@@ -2,8 +2,8 @@ import './styles.css';
 import CanvasJSReact from '@canvasjs/react-charts';
 import { useEffect, useState } from "react";
 
-var CanvasJS = CanvasJSReact.CanvasJS;
-var CanvasJSChart = CanvasJSReact.CanvasJSChart
+let CanvasJS = CanvasJSReact.CanvasJS;
+let CanvasJSChart = CanvasJSReact.CanvasJSChart
 
 const WeatherChart = ({data}) => {
 
@@ -28,6 +28,8 @@ const WeatherChart = ({data}) => {
 
     const options = {
         animationEnabled: true,
+        theme: "dark1",
+        height: 260,
        /*  title:{
             text: "Weather Forecast"
         }, */
@@ -51,12 +53,10 @@ const WeatherChart = ({data}) => {
             dataPoints: dataPoints
         }]
     }
-    //const labels = [...Array(40).keys()];
-    //labels.values
-
+    
     return(
-        <div className='chart my-5 mx-auto w-75'>
-            <CanvasJSChart options = {options} />
+        <div className='chart y-5 mx-auto w-75'>
+            <CanvasJSChart options = {options}/>
         </div>
     )
 }

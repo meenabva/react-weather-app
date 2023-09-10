@@ -61,16 +61,21 @@ const WeatherPage = ()=> {
   return (
     // <div className="App App-header weather-page my-auto" data-bs-theme="dark">
     <Container className="weather-container">
+      {(data.city) ? (
+        <Row className="p-1">
+          <h3>{data.city.name}, {data.city.country}</h3>
+        </Row>
+        ) : (<Row></Row>
+      )}
       <Row>
-        <Col className="temp-col">
-          <h2 className='mb-3'>{data.name}</h2>
+        <Col className="temp-col col-md-3">
           {(typeof data.list != 'undefined') ? (
             <TodayWeatherCard weatherData={data.list[0]} />
           ): (
             <div></div>
           )}
         </Col>
-        <Col>
+        <Col className="col-md-9 mx-0">
         <Row>
           <WeatherChart data={{tempList, dates}} />
         </Row>

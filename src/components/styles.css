@@ -1,5 +1,5 @@
 .card{
-    background-color: rgb(89, 99, 124);
+    background-color: #2a2a2a;
     margin: 20px;
     padding: 20px;
     width: fit-content;
@@ -17,7 +17,6 @@
 .weather-container{
     background-color: rgb(183, 226, 255);
     height: 100%;
-    width: 90%;
     margin: auto;
     border-radius: 20px;
     /* display: flex;
@@ -35,6 +34,8 @@
 }
 
 .chart{
-    background-color: azure;
+    background-color: #2a2a2a;
     border-radius: 20px;
+    height: 280px;
+    padding: 10px;
 }
