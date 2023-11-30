@@ -1,6 +1,6 @@
 import React from 'react';
 import "./styles.css";
-import { Card, Col, Container, Row } from 'react-bootstrap';
+import { Card, Col, Row } from 'react-bootstrap';
 
 const TodayWeatherCard = ({weatherData}) => {
 

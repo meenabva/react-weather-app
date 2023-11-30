@@ -3,6 +3,7 @@ import "./styles.css";
 import { Container, Row, Col } from "react-bootstrap";
 import TodayWeatherCard from "./TodayWeatherCard";
 import WeatherChart from "./WeatherChart";
+import WeatherForecast from "./WeatherForecast";
 
 const WeatherPage = ()=> {
   const [lat, setLat] = useState(12.9762);
@@ -42,7 +43,7 @@ const WeatherPage = ()=> {
   const getTempList = (data) => {
     let t = [];
     let d = [];
-    console.log("temp list", data[0])
+    //console.log("temp list", data)
     if(data){
       for(let i = 0; i < 8; i ++){
         t.push(data[i].main.temp)
@@ -60,7 +61,7 @@ const WeatherPage = ()=> {
 
   return (
     // <div className="App App-header weather-page my-auto" data-bs-theme="dark">
-    <Container className="weather-container">
+    <Container className="weather-container w-responsive w-75 text-center m-auto p-3">
       {(data.city) ? (
         <Row className="p-1">
           <h3>{data.city.name}, {data.city.country}</h3>
@@ -68,16 +69,19 @@ const WeatherPage = ()=> {
         ) : (<Row></Row>
       )}
       <Row>
-        <Col className="temp-col col-md-3">
+        <Col className="temp-col col-md-3 p-1">
           {(typeof data.list != 'undefined') ? (
             <TodayWeatherCard weatherData={data.list[0]} />
           ): (
             <div></div>
           )}
         </Col>
-        <Col className="col-md-9 mx-0">
+        <Col className="col-md-8 mx-0">
+        <Row className="m-0">
+          <WeatherChart tempList={tempList} dates={dates} />
+        </Row>
         <Row>
-          <WeatherChart data={{tempList, dates}} />
+          {/* <WeatherForecast list={data}/> */}
         </Row>
         </Col>
       </Row>
@@ -85,4 +89,4 @@ const WeatherPage = ()=> {
   );
 }
 
-export default WeatherPage;
+export default WeatherPage

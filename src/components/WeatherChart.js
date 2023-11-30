@@ -5,17 +5,17 @@ import { useEffect, useState } from "react";
 let CanvasJS = CanvasJSReact.CanvasJS;
 let CanvasJSChart = CanvasJSReact.CanvasJSChart
 
-const WeatherChart = ({data}) => {
+const WeatherChart = ({tempList, dates}) => {
 
     const [dataPoints, setDataPoints] = useState([]);
 
     const getDataPoints = () => {
         let list = [];
         for(let i = 0; i < 8; i ++){
-            //console.log(data)
+            console.log(dates)
             list.push({
-                x: data.dates[i],
-                y: data.tempList[i]
+                x: dates[i],
+                y: tempList[i]
             })
         }
         setDataPoints(list)
@@ -30,17 +30,17 @@ const WeatherChart = ({data}) => {
         animationEnabled: true,
         theme: "dark1",
         height: 260,
-       /*  title:{
+        title:{
             text: "Weather Forecast"
-        }, */
+        }, 
         axisX: {
             gridThickness: 0,
             lineThickness: 1,
 	        tickThickness: 0,
-         //   title: "Time"
+            title: "Time"
         },
         axisY: {
-        //    title: "Temperature(°C)",
+            title: "Temperature(°C)",
             suffix:"°C",
             gridThickness: 0,
             lineThickness: 1,
